@@ -1,4 +1,4 @@
-package com.blogspot.vitrocket.transactions;
+package com.blogspot.vitrocket.transactions.web;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
