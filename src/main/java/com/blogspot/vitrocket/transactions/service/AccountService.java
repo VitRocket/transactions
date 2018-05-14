@@ -1,16 +1,18 @@
 package com.blogspot.vitrocket.transactions.service;
 
 import com.blogspot.vitrocket.transactions.entity.Account;
-import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.NoSuchElementException;
 
 /**
  * Created by VitRocket on 13.05.2018.
  */
 public interface AccountService {
 
-    public List<Account> findAll();
+    List<Account> findAll();
 
-    public void save(Account account);
+    void save(Account account);
+
+    Account findById(Long id) throws NoSuchElementException;
 }

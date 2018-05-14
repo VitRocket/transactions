@@ -4,14 +4,15 @@ import com.blogspot.vitrocket.transactions.dao.AccountRepository;
 import com.blogspot.vitrocket.transactions.entity.Account;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
+import java.util.NoSuchElementException;
 
 /**
  * Created by VitRocket on 13.05.2018.
  */
-@Service
+@Component
 @RequiredArgsConstructor
 public class AccountServiceImpl implements AccountService {
 
@@ -27,4 +28,9 @@ public class AccountServiceImpl implements AccountService {
     public void save(Account account) {
         accountRepository.save(account);
     }
+
+    public Account findById(Long id) throws NoSuchElementException {
+        return accountRepository.findById(id).orElse(null);
+    }
+
 }
